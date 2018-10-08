@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Game Challenge</title>
+  <style type="text/css">
+    .hide {
+      display: none;
+    }
+    .left {
+      float: left;
+    }
+    .right {
+      float: right;
+    }
+    .clear {
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <div style="width: 700px;margin: 0 auto;" id="page">
+    <h1 style="margin-bottom:5px">Hockey, JavaScript, and jQuery oh My!</h1>
+    <h2 style="margin-top: 0">...the game!</h2>
+    <div style="margin: 0 auto;text-align:center">
+      <button id="reset">RESET</button><br>
+      NUMBER OF RESETS: <span id="num-resets">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="left">
+      <h2>
+        Team 1
+      </h2>
+      <div class="hits">
+        SHOTS TAKEN: <span id="teamone-numshots">0</span><br>
+        GOALS: <span id="teamone-numhits">0</span>
+      </div>
+      <div>
+        <button id="teamone-shoot">SHOOT</button>
+      </div>
+    </div>
+    <div class="right">
+      <h2>
+        Team 2
+      </h2>
+      <div class="hits">
+        SHOTS TAKEN: <span id="teamtwo-numshots">0</span><br>
+        GOALS: <span id="teamtwo-numhits">0</span>
+      </div>
+      <div>
+        <button id="teamtwo-shoot">SHOOT</button>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <script>
+  (function() {
+
+      const oneButton = document.querySelector("#teamone-shoot")
+      const oneShots = document.querySelector("#teamone-numshots")
+      const oneScores = document.querySelector("#teamone-numhits")
+
+      oneButton.onclick = function () {
+        oneShots.innerHTML = parseInt(oneShots.innerHTML) + 1;
+        let randomNumber = Math.floor(Math.random() * 3);
+        if (randomNumber == 1) {
+          oneScores.innerHTML = parseInt(oneScores.innerHTML) + 1;
+          document.body.style.backgroundColor = "red";
+          }
+        }
+
+        const twoButton = document.querySelector("#teamtwo-shoot")
+        const twoShots = document.querySelector("#teamtwo-numshots")
+        const twoScores = document.querySelector("#teamtwo-numhits")
+
+        twoButton.onclick = function () {
+          twoShots.innerHTML = parseInt(twoShots.innerHTML) + 1;
+          let randomNumber = Math.floor(Math.random() * 3);
+          if (randomNumber == 1) {
+            twoScores.innerHTML = parseInt(twoScores.innerHTML) + 1;
+            document.body.style.backgroundColor = "blue";
+            }
+          }
+
+          const resetB = document.querySelector("#reset")
+          const numResets = document.querySelector("#num-resets")
+
+          resetB.onclick = function () {
+            numResets.innerHTML = parseInt(numResets.innerHTML) + 1;
+            oneShots.innerHTML = 0;
+            oneScores.innerHTML = 0;
+            twoShots.innerHTML = 0;
+            twoScores.innerHTML = 0;
+            document.body.style.backgroundColor = "white";
+
+          }
+
+  })();
+  </script>
+</body>
+</html>
