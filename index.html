@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JS Game Challenge</title>
+  <title>Duke Carolina Basketball Simulator</title>
   <style type="text/css">
     .hide {
       display: none;
@@ -72,10 +72,17 @@
           oneScores.innerHTML = parseInt(oneScores.innerHTML) + 3;
           document.body.style.backgroundColor = "Blue";
           window.alert("Blue Devil Three Pointer!");
+          var crowd = new Audio('./assets/audio/cheer.mp3');
+          crowd.play();
         } else if (randomNumber > 1 && randomNumber < 6) {
           oneScores.innerHTML = parseInt(oneScores.innerHTML) + 2;
           document.body.style.backgroundColor = "Blue";
-          }
+          var crowd = new Audio('./assets/audio/score.mp3');
+          crowd.play();
+        } else {
+          var crowd = new Audio('./assets/audio/miss.mp3');
+          crowd.play();
+        }
         }
 
         const twoButton = document.querySelector("#teamtwo-shoot")
@@ -89,9 +96,16 @@
             twoScores.innerHTML = parseInt(twoScores.innerHTML) + 3;
             document.body.style.backgroundColor = "DeepSkyBlue";
             window.alert("Tarheel Three Pointer!");
+            var crowd = new Audio('./assets/audio/boo.mp3');
+            crowd.play();
           } else if (randomNumber > 1 && randomNumber < 5) {
             twoScores.innerHTML = parseInt(twoScores.innerHTML) + 2;
             document.body.style.backgroundColor = "DeepSkyBlue";
+            var crowd = new Audio('./assets/audio/score.mp3');
+            crowd.play();
+            } else {
+              var crowd = new Audio('./assets/audio/miss.mp3');
+              crowd.play();
             }
           }
 
@@ -104,7 +118,7 @@
             oneScores.innerHTML = 0;
             twoShots.innerHTML = 0;
             twoScores.innerHTML = 0;
-            document.body.style.backgroundColor = "white";
+            document.body.style.backgroundColor = "black";
 
           }
 
