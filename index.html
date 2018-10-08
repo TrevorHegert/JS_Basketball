@@ -17,11 +17,12 @@
       clear: both;
     }
   </style>
+  <link href="./assets/css/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
   <div style="width: 700px;margin: 0 auto;" id="page">
-    <h1 style="margin-bottom:5px">Hockey, JavaScript, and jQuery oh My!</h1>
-    <h2 style="margin-top: 0">...the game!</h2>
+    <h1 style="margin-bottom:5px">Duke Carolina Basketball</h1>
+    <h2 style="margin-top: 0">Simulator</h2>
     <div style="margin: 0 auto;text-align:center">
       <button id="reset">RESET</button><br>
       NUMBER OF RESETS: <span id="num-resets">0</span>
@@ -29,11 +30,13 @@
     <div class="clear"></div>
     <div class="left">
       <h2>
-        Team 1
+        <img src="assets\images\bluedevil.png" height="100" />
+        <br>
+        Duke Blue Devils
       </h2>
       <div class="hits">
         SHOTS TAKEN: <span id="teamone-numshots">0</span><br>
-        GOALS: <span id="teamone-numhits">0</span>
+        Points: <span id="teamone-numhits">0</span>
       </div>
       <div>
         <button id="teamone-shoot">SHOOT</button>
@@ -41,11 +44,13 @@
     </div>
     <div class="right">
       <h2>
-        Team 2
+        <img src="assets\images\tarheel.png" height="100" />
+        <br>
+        Carolina Tarheels
       </h2>
       <div class="hits">
         SHOTS TAKEN: <span id="teamtwo-numshots">0</span><br>
-        GOALS: <span id="teamtwo-numhits">0</span>
+        Points: <span id="teamtwo-numhits">0</span>
       </div>
       <div>
         <button id="teamtwo-shoot">SHOOT</button>
@@ -62,10 +67,14 @@
 
       oneButton.onclick = function () {
         oneShots.innerHTML = parseInt(oneShots.innerHTML) + 1;
-        let randomNumber = Math.floor(Math.random() * 3);
-        if (randomNumber == 1) {
-          oneScores.innerHTML = parseInt(oneScores.innerHTML) + 1;
-          document.body.style.backgroundColor = "red";
+        let randomNumber = Math.floor(Math.random() * 10);
+        if (randomNumber < 2) {
+          oneScores.innerHTML = parseInt(oneScores.innerHTML) + 3;
+          document.body.style.backgroundColor = "Blue";
+          window.alert("Blue Devil Three Pointer!");
+        } else if (randomNumber > 1 && randomNumber < 6) {
+          oneScores.innerHTML = parseInt(oneScores.innerHTML) + 2;
+          document.body.style.backgroundColor = "Blue";
           }
         }
 
@@ -75,10 +84,14 @@
 
         twoButton.onclick = function () {
           twoShots.innerHTML = parseInt(twoShots.innerHTML) + 1;
-          let randomNumber = Math.floor(Math.random() * 3);
-          if (randomNumber == 1) {
-            twoScores.innerHTML = parseInt(twoScores.innerHTML) + 1;
-            document.body.style.backgroundColor = "blue";
+          let randomNumber = Math.floor(Math.random() * 10);
+          if (randomNumber < 1) {
+            twoScores.innerHTML = parseInt(twoScores.innerHTML) + 3;
+            document.body.style.backgroundColor = "DeepSkyBlue";
+            window.alert("Tarheel Three Pointer!");
+          } else if (randomNumber > 1 && randomNumber < 5) {
+            twoScores.innerHTML = parseInt(twoScores.innerHTML) + 2;
+            document.body.style.backgroundColor = "DeepSkyBlue";
             }
           }
 

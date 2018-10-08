@@ -1,0 +1,29 @@
+#page h1 {
+  text-align: center;
+}
+
+#page h2 {
+  text-align: center;
+}
+
+.hits {
+  text-align: center;
+}
+
+#teamone-shoot {
+    height:20px;
+    width:100px;
+    margin: -20px -50px;
+    position:relative;
+    top:50%;
+    left:50%;
+}
+
+#teamtwo-shoot {
+    height:20px;
+    width:100px;
+    margin: -20px -50px;
+    position:relative;
+    top:50%;
+    left:50%;
+}
